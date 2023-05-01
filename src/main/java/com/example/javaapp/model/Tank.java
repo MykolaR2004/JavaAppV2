@@ -37,13 +37,6 @@ public class Tank {
         return head.getX() < 0 || head.getY() < 0 || head.getX() >= Game.SIZE_XY || head.getY() >= Game.SIZE_XY;
     }
 
-
-//    public boolean eat(Apple apple) {
-//        return head.getX() == apple.getX() && head.getY() == apple.getY();
-//    }
-
-
-
     public boolean hit(Target target) {
         return head.getX() == target.getX() || head.getY() == target.getY();
     }

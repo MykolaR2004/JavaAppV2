@@ -97,11 +97,4 @@ public class Game {
         }
         views.forEach(View::update);}
     }
-
-//    public void move(Direction direction) {
-//        Element e = tank.move(direction);
-//        views.forEach(View::update);
-//    }
-
-
 }

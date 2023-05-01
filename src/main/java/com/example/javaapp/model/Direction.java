@@ -6,7 +6,6 @@ public interface Direction {
     Direction DOWN = e -> new TankElement(e.getX(), e.getY() + 1);
     Direction LEFT = e -> new TankElement(e.getX() - 1, e.getY());
     Direction RIGHT = e -> new TankElement(e.getX() + 1, e.getY());
-    Direction NONE = e -> new TankElement(e.getX(), e.getY());
 
    TankElement next(TankElement element);
 }

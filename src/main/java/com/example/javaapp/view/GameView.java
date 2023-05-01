@@ -22,12 +22,7 @@ public class GameView implements View{
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Tank tank = game.getTank();
         double scale = getScale();
-
         drawElement(tank.getHead(), gc, scale);
-
-//        for (TankElement element : game.getTank().getBody()) {
-//            drawElement(element, gc, scale, Color.BLUE);
-//        }
     }
     private double getScale() {
         double size = Math.min(canvas.getWidth(), canvas.getHeight());
@@ -39,8 +34,8 @@ public class GameView implements View{
         gc.fillRect(element.getX() * CELL_SIZE / scale, element.getY() * CELL_SIZE / scale, CELL_SIZE / scale, CELL_SIZE / scale);
     }
 
-    private void drawTargetElement(Element element, GraphicsContext gc, double scale, Color color) {
-        gc.setFill(color);
+    private void drawTargetElement(Element element, GraphicsContext gc, double scale) {
+        gc.setFill(Color.DARKRED);
         gc.fillOval(element.getX() * CELL_SIZE / scale, element.getY() * CELL_SIZE / scale, CELL_SIZE / scale, CELL_SIZE / scale);
     }
 
@@ -54,7 +49,7 @@ public class GameView implements View{
     private void drawTarget() {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         Target target = game.getTarget();
-        drawTargetElement(target, gc, getScale(), Color.DARKRED);
+        drawTargetElement(target, gc, getScale());
     }
 
     private void clear() {

@@ -1,9 +1,7 @@
 package com.example.javaapp;
 
 import com.example.javaapp.model.Direction;
-import com.example.javaapp.model.Element;
 import com.example.javaapp.model.Game;
-import com.example.javaapp.model.Tank;
 import com.example.javaapp.view.GameView;
 import com.example.javaapp.view.ParamsView;
 import com.example.javaapp.view.View;
@@ -12,7 +10,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -30,7 +27,7 @@ public class HelloController {
     private Canvas canvas;
 
     private Game game;
-    private Tank tank;
+
 
 
 
@@ -43,7 +40,6 @@ public class HelloController {
         View paramsView = new ParamsView(game,score,timer);
         game.registerView(view);
         game.registerView(paramsView);
-    //    game.registerView(scoreView);
 
         canvas.widthProperty().addListener(evt -> view.update());
         canvas.heightProperty().addListener(evt -> view.update());
@@ -58,11 +54,6 @@ public class HelloController {
     public void processTick() {
         game.tick();
     }
-
-    public Tank getTank() {
-        return tank;
-    }
-
 
     public void processKey(KeyEvent keyEvent) {
         KeyCode keyCode = keyEvent.getCode();
